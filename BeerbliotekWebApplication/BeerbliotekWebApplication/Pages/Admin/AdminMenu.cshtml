@@ -1,0 +1,41 @@
+﻿@page
+@model BeerbliotekWebApplication.Pages.Admin.AdminMenuModel
+@{
+}
+
+<br />
+<h2>List of Beers</h2>
+<a class="btn btn-primary btn-sm" asp-page="Create">Create new beer to database</a>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Alcohol</th>
+			<th>Price</th>
+			<th>Volume</th>
+			<th>Type</th>
+			<th>Country</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.ListBeers)
+		{
+			<tr>
+				<td>@item.Id</td>
+				<td>@item.Name</td>
+				<td>@item.Alcohol</td>
+				<td>@item.Price</td>
+				<td>@item.Volume</td>
+				<td>@item.Type</td>
+				<td>@item.Country</td>
+				<td>
+					<a class="btn btn-primary btn-sm" href="/Admin/Edit?id=@item.Id">Edit</a>
+					<a class="btn btn-danger btn-sm" asp-page="AdminMenu" onclick="return confirm('Vill du radera post?');" asp-page-handler="Delete" asp-route-id="@item.Id">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

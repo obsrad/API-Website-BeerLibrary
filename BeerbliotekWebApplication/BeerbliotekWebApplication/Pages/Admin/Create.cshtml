@@ -1,0 +1,44 @@
+﻿@page
+@model BeerbliotekWebApplication.Pages.Admin.CreateModel
+@{
+}
+
+<br/>
+<h2>New Beer</h2>
+
+<form method="post">
+	<div class="row mb-3">
+		<label class="col-sm-3" asp-for="@Model.Beer.Name">Namn</label>
+		<input type="text" class="col-sm-6" asp-for="@Model.Beer.Name" />
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3" asp-for="@Model.Beer.Alcohol">Alkohol %</label>
+		<input type="text" class="col-sm-6" asp-for="@Model.Beer.Alcohol" />
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3" asp-for="@Model.Beer.Price">Pris</label>
+		<input type="text" class="col-sm-6" asp-for="@Model.Beer.Price" />
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3" asp-for="@Model.Beer.Volume">Volym ml</label>
+		<input type="number" class="col-sm-6" asp-for="@Model.Beer.Volume" />
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3" asp-for="@Model.Beer.Type">Typ</label>
+		<input type="text" class="col-sm-6" asp-for="@Model.Beer.Type" />
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3" asp-for="@Model.Beer.Country">Land</label>
+		<input type="text" class="col-sm-6" asp-for="@Model.Beer.Country" />
+	</div>
+
+
+	<div class="row mb-3">
+		<div class="offset-sm-3 col-sm-3 d-grid">
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+		<div class="col-sm-3 d-grid">
+			<a class="btn btn-secondary" href="/Admin/AdminMenu" role="button">Cancel</a>
+		</div>
+	</div>
+</form>

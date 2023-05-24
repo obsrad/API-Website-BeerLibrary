@@ -1,0 +1,11 @@
+﻿@page
+@model BeerbliotekWebApplication.Pages.Login.LoginMenuModel
+@{
+}
+<form method="post">
+	<label for="username">Användarnamn</label>
+	<input type="text" id="username" asp-for="@Model.InputAccount.Username"/>
+	<label for="password">Lösenord</label>
+	<input type="password" id="password" asp-for="@Model.InputAccount.Password"/>
+	<button type="submit">Logga in</button>
+</form>
